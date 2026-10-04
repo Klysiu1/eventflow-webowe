@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+/* Kolory tła */
+  --color-dark: #0F172A;              /* Główne tło aplikacji */
+  --color-surface: #1E293B;           /* Panele, karty, sidebar */
+  --color-surface-highlight: #334155; /* JAŚNIEJSZE TŁO - aktywny link, blok wydarzenia */
+  --color-border: #334155;            /* Krawędzie */
+  
+  /* Kolory semantyczne */
+  --color-danger: #F04438;
+  --color-warning: #F59E0B;
+  --color-safe: #10B981;
+  --color-primary: #3B82F6;
+  }
+
+  body {
+    background-color: var(--color-dark);
+    color: white;
+  }
+
+  .dark-map-tiles {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+}

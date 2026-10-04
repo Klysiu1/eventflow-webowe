@@ -1,0 +1,214 @@
+/* Mobile presentation from the organizer PDF. Desktop rules stay in their existing files. */
+.mobile-masthead, .mobile-only, .mobile-disclosure-toggle { display: none; }
+.mobile-controls, .mobile-controls-content { display: contents; }
+
+@media (max-width: 767px) {
+    .app-layout {
+        --color-dark: #0c1013;
+        --color-surface: #20262c;
+        --color-surface-highlight: #173743;
+        --color-border: #303941;
+        --color-primary: #50c7e9;
+        --color-danger: #ff595d;
+        --color-warning: #f6bc48;
+        --color-safe: #50c799;
+        color: #f4f2eb;
+    }
+    .app-layout .mobile-only { display: inline; }
+    .app-layout .app-main { padding: 18px 18px calc(92px + env(safe-area-inset-bottom)); }
+    .app-layout .app-sidebar, .app-layout .app-sidebar > div:first-child { display: contents; }
+    .app-layout :is(.app-brand, .workspace-navigation, .app-sidebar-footer, .app-event-label, .app-event, .desktop-nav-label) { display: none; }
+    .app-layout .app-navigation { position: fixed; z-index: 1000; inset: auto 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); background: #171d22; border-top: 1px solid var(--color-border); }
+    .app-layout .app-navigation > a[href='/settings'] { display: none; }
+    .app-layout .layout-nav-link { min-height: 62px; padding: 8px 2px; border-radius: 18px; gap: 6px; color: #90989d; font-size: 12px; font-weight: 500; }
+    .app-layout .layout-nav-link svg { width: 23px; height: 23px; }
+    .app-layout .layout-nav-link[aria-current=page] { background: #173743; color: #f4f2eb; font-weight: 700; }
+    .app-layout .layout-nav-link[aria-current=page] svg { color: #50c7e9; }
+    .app-layout .mobile-masthead { display: block; flex-shrink: 0; padding: 18px 18px 15px; border-bottom: 1px solid var(--color-border); background: var(--color-dark); }
+    .mobile-brand-row { display: flex; align-items: center; gap: 8px; }
+    .mobile-brand { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 800; white-space: nowrap; }
+    .mobile-brand > svg { box-sizing: content-box; color: #50c7e9; background: #173743; border-radius: 10px; padding: 8px; }
+    .mobile-source { margin-left: auto; color: #50c7e9; font-size: 9px; font-weight: 700; white-space: nowrap; }
+    .mobile-more { position: relative; }
+    .mobile-more summary { list-style: none; cursor: pointer; min-width: 32px; min-height: 40px; display: grid; place-items: center; color: #a1a9ad; }
+    .mobile-more summary::-webkit-details-marker { display: none; }
+    .mobile-more nav { position: absolute; right: 0; top: 42px; width: 180px; z-index: 1100; background: #20262c; border: 1px solid #39434a; border-radius: 14px; padding: 6px; box-shadow: 0 10px 25px #0008; }
+    .mobile-more nav a { display: block; min-height: 44px; padding: 12px; font-size: 14px; border-radius: 8px; }
+    .mobile-more nav a:hover, .mobile-more nav a[aria-current] { background: #173743; }
+    .mobile-title-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(100px, 35%); align-items: center; gap: 10px; margin-top: 18px; }
+    .mobile-title-row > div > p { color: #50c7e9; font-size: 10px; font-weight: 700; margin-bottom: 5px; }
+    .mobile-title-row h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 400; line-height: 1.15; }
+    .mobile-event-context { background: #20262c; border-radius: 17px; padding: 11px 12px; font-size: 11px; line-height: 1.35; overflow-wrap: anywhere; }
+    .mobile-event-context strong, .mobile-event-context span { display: block; }
+    .mobile-event-context span { color: #929b9f; font-size: 10px; margin-top: 4px; }
+    .app-layout.mobile-monitoring .monitoring-header > div:first-child,
+    .app-layout.mobile-monitoring .dashboard-header > div { display: none; }
+    .app-layout.mobile-monitoring .monitoring-header { margin: 0 0 12px; gap: 8px; }
+    .app-layout.mobile-monitoring .simulation-page > .monitoring-header,
+    .app-layout.mobile-monitoring .demo-alerts-page > .monitoring-header { display: none; }
+    .app-layout .monitoring-page { padding-bottom: 0; }
+    .app-layout .monitoring-muted { color: #969fa5; }
+    .app-layout :is(.local-notice, .simulation-demo-notice) { font-size: 11px; line-height: 1.5; margin-bottom: 16px; padding: 8px 0; }
+    .app-layout .simulation-demo-notice { border: 0; }
+    .app-layout .simulation-demo-notice svg { width: 15px; height: 15px; }
+    .app-layout :is(.local-source-nav, .local-badge) { font-size: 11px; }
+    .app-layout :is(input, select, textarea) { font-size: 16px; }
+    .app-layout :is(button, a, summary, input, select):focus-visible { outline: 2px solid #50c7e9; outline-offset: 3px; }
+    .app-layout .mobile-disclosure-toggle { display: inline-flex; align-items: center; min-height: 40px; color: #50c7e9; font-size: 12px; font-weight: 600; }
+    .app-layout .mobile-controls { display: block; margin-bottom: 14px; }
+    .app-layout .mobile-controls > button { gap: 8px; }
+    .app-layout .mobile-controls-content { display: none; }
+    .app-layout .mobile-controls.is-expanded .mobile-controls-content { display: block; padding-top: 10px; }
+    .app-layout .mobile-controls.is-expanded > button svg { transform: rotate(180deg); }
+    .app-layout .mobile-map-switch { display: flex; gap: 3px; padding: 3px; background: #171d21; border-radius: 20px; }
+    .app-layout .mobile-map-switch button { min-height: 36px; padding: 6px 12px; font-size: 11px; text-transform: uppercase; border-radius: 18px; color: #929b9f; }
+    .app-layout .mobile-map-switch button[aria-pressed=true] { background: #173743; color: #50c7e9; }
+    .app-layout .mobile-zone-summary { display: block; margin-top: 12px; }
+    .app-layout .mobile-alert-history { display: flex; width: 100%; margin-top: 20px; padding: 14px; border-radius: 15px; background: #20262c; }
+    .app-layout .mobile-section-number { color: #50c7e9; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 400; margin-right: 7px; }
+
+    /* Simulation: two scenario cards, compact metrics, then three flow steps. */
+    .app-layout .simulation-workspace { gap: 20px; }
+    .app-layout .simulation-form { padding: 0; border: 0; }
+    .app-layout .simulation-form fieldset { position: relative; }
+    .app-layout .simulation-form legend { font-size: 17px; font-weight: 400; padding: 0; max-width: 54%; }
+    .app-layout .simulation-parameters-toggle { position: absolute; right: 0; top: -34px; font-size: 11px; }
+    .app-layout .simulation-scenarios { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0 20px; }
+    .app-layout .simulation-scenario { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 7px; padding: 14px 12px; min-height: 120px; border: 1px solid transparent; background: #171d21; border-radius: 21px; }
+    .app-layout .simulation-scenario.selected { border-color: #50c7e9; background: #173743; }
+    .app-layout .simulation-scenario > svg { display: none; }
+    .app-layout .simulation-scenario input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+    .app-layout .simulation-scenario-letter { color: #919b9f; font: 23px Georgia, serif; }
+    .app-layout .selected .simulation-scenario-letter { color: #50c7e9; }
+    .app-layout .simulation-scenario-name { font-size: 13px; font-weight: 700; line-height: 1.3; }
+    .app-layout .simulation-scenario-description { color: #a7afb4; font-size: 11px; line-height: 1.4; }
+    .app-layout .simulation-selection { display: none; }
+    .app-layout .selected .simulation-selection { display: block; position: absolute; right: 10px; top: 18px; color: #50c7e9; font-size: 8px; font-weight: 700; text-transform: uppercase; }
+    .app-layout .selected .simulation-selection::before { content: '● '; }
+    .app-layout .simulation-fields:not(.mobile-expanded), .app-layout #simulation-result-details:not(.mobile-expanded) { display: none; }
+    .app-layout .simulation-fields.mobile-expanded { padding: 16px; margin-bottom: 16px; background: #20262c; border-radius: 16px; }
+    .app-layout .simulation-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; margin-top: 0; }
+    .app-layout .simulation-button { min-height: 44px; border-radius: 12px; background: #171d21; border: 0; color: #50c7e9; text-transform: uppercase; font-size: 10px; padding: 10px 12px; }
+    .app-layout .simulation-button.primary { background: #50c7e9; color: #0c1013; font-weight: 800; }
+    .app-layout .simulation-actions svg { display: none; }
+    .app-layout .simulation-results { padding: 17px; background: #20262c; border-radius: 23px; }
+    .app-layout .simulation-results-heading { margin-bottom: 12px; }
+    .app-layout .simulation-results-heading h2 { font-size: 16px; font-weight: 700; }
+    .app-layout .simulation-phase { font-size: 10px; }
+    .app-layout .simulation-result-caption { display: none; }
+    .app-layout .simulation-run-summary { display: none; }
+    .app-layout .simulation-metrics { border: 0; padding: 5px 0 0; grid-template-columns: 1.15fr .9fr 1fr; }
+    .app-layout .simulation-metrics > div { display: flex; flex-direction: column; padding: 0 9px; }
+    .app-layout .simulation-metrics > div:first-child { padding-left: 0; }
+    .app-layout .simulation-metrics > div:nth-child(2) { order: 3; }
+    .app-layout .simulation-metrics > div:nth-child(3) { order: 2; }
+    .app-layout .simulation-metrics dt { order: 2; min-height: 0; font-size: 10px; line-height: 1.35; color: #969fa5; margin-top: 5px; }
+    .app-layout .simulation-metrics dd { font: 35px/1.1 Georgia, serif; }
+    .app-layout .simulation-metrics small { font-size: 19px; margin-left: 2px; }
+    .app-layout .simulation-metrics > div:nth-child(3) > dd { color: #f6bc48; }
+    .app-layout .simulation-metrics > div:nth-child(2) > dd { color: #f4f2eb; }
+    .app-layout .simulation-metrics .simulation-risk-zones { order: 3; font-family: inherit; font-size: 9px; line-height: 1.5; margin-top: 5px; }
+    .app-layout .simulation-results > .mobile-disclosure-toggle { margin-top: 6px; font-size: 10px; min-height: 28px; }
+    .app-layout .simulation-empty { min-height: 140px; padding: 14px 0; border: 0; }
+    .app-layout .simulation-empty > svg, .app-layout .simulation-empty-labels { display: none; }
+    .app-layout .simulation-empty p { font-size: 11px; }
+    .app-layout .simulation-flow { margin-top: 24px; }
+    .app-layout .simulation-flow-heading { margin-bottom: 14px; }
+    .app-layout .simulation-flow-heading h2 { font-size: 17px; font-weight: 400; }
+    .app-layout .simulation-flow-heading > .monitoring-muted { display: none; }
+    .app-layout .simulation-flow-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0; gap: 20px; background: none; border: 0; }
+    .app-layout .simulation-flow-step { display: flex; flex-direction: row; position: relative; gap: 0; }
+    .app-layout .simulation-flow-card { padding: 12px 10px; border-radius: 17px; border-top-width: 2px; background: #171d21; }
+    .app-layout .simulation-flow-card:is(.source, .redirect, .impact) { background: #171d21; }
+    .app-layout .simulation-flow-number { font: 17px Georgia, serif; margin-bottom: 10px; }
+    .app-layout .simulation-flow-card.source .simulation-flow-number { color: #ff595d; }
+    .app-layout .simulation-flow-card.redirect .simulation-flow-number { color: #50c7e9; }
+    .app-layout .simulation-flow-card.impact .simulation-flow-number { color: #f6bc48; }
+    .app-layout .simulation-flow-card h3 { font-size: 11px; line-height: 1.4; }
+    .app-layout .simulation-flow-card p { color: #929b9f; font-size: 10px; line-height: 1.4; }
+    .app-layout .simulation-flow-arrow { position: absolute; right: -18px; width: 16px; height: 16px; transform: none; }
+    .app-layout .simulation-flow-recommendation { border: 0; border-radius: 20px; background: #3c311e; padding: 16px 14px; gap: 12px; }
+    .app-layout .simulation-flow-recommendation > svg { box-sizing: content-box; background: #f6bc48; color: #171d21; border-radius: 50%; padding: 8px; width: 18px; height: 18px; }
+    .app-layout .simulation-flow-recommendation h3 { text-transform: uppercase; font-size: 11px; }
+    .app-layout .simulation-flow-recommendation p { font-size: 12px; margin-top: 4px; }
+
+    /* Existing monitoring cards retain their data, links and controls. */
+    .app-layout .monitoring-zone-grid { grid-template-columns: 1fr; gap: 9px; }
+    .app-layout .monitoring-zone { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 10px; border: 0; border-left: 5px solid var(--zone-color); border-radius: 16px; background: #171d21; padding: 13px 15px; }
+    .app-layout .monitoring-zone h2 { grid-column: 1; grid-row: 1; min-height: 0; margin: 0; font-size: 14px; }
+    .app-layout .monitoring-zone > .monitoring-muted { grid-column: 1; grid-row: 2; font-size: 11px; }
+    .app-layout .monitoring-zone .monitoring-percent { grid-column: 2; grid-row: 1 / 3; align-self: center; font: 30px Georgia, serif; margin: 0; }
+    .app-layout .monitoring-zone .monitoring-badge { grid-column: 1 / -1; font-size: 9px; }
+    .app-layout .monitoring-zone .monitoring-progress { display: none; }
+    .app-layout .monitoring-zone-link { font-size: 10px; min-height: 32px; }
+    .app-layout .monitoring-alert { border: 0; border-left: 4px solid #f6bc48; border-radius: 20px; background: #3c311e; }
+    .app-layout .monitoring-alert.critical { background: #412326; border-color: #ff595d; }
+    .app-layout .monitoring-alert.resolved { background: #171d21; }
+    .app-layout .monitoring-alert summary { padding: 17px 14px; gap: 9px; }
+    .app-layout .monitoring-alert summary > svg:first-child { display: none; }
+    .app-layout .monitoring-alert h2 { font: 20px/1.25 Georgia, serif; }
+    .app-layout .monitoring-alert-meta { font-size: 10px; gap: 5px 8px; }
+    .app-layout .monitoring-alert-detail { background: #20262c; margin: 0; padding: 17px; border-radius: 0 0 17px 17px; }
+    .app-layout .demo-alerts-page .monitoring-alert:not(.resolved) .monitoring-alert-detail > dl { display: none; }
+    .app-layout .demo-checklist { padding: 0; border: 0; }
+    .app-layout .demo-checklist legend { font-size: 16px; }
+    .app-layout .demo-checklist label { min-height: 44px; font-size: 13px; }
+    .app-layout .local-button.primary { background: #50c7e9; border-color: #50c7e9; color: #0c1013; }
+    .app-layout :is(.monitoring-map, .venue-plan) { border-radius: 21px; height: 300px; }
+    .app-layout .venue-zone-label span { display: block; font-size: 8px; max-width: 65px; line-height: 1.2; }
+    .app-layout .venue-zone-label strong { font-size: 10px; }
+    .app-layout .monitoring-segments { border: 0; border-radius: 20px; background: #171d21; }
+    .app-layout .monitoring-segments button { border-radius: 18px; font-size: 11px; }
+    .app-layout .monitoring-segments button[aria-pressed=true] { color: #50c7e9; background: #173743; }
+    .app-layout .mobile-controls .monitoring-toolbar .monitoring-segments[aria-label^='Widok stref'] { display: none; }
+    .app-layout .monitoring-stats { padding: 14px; border: 0; background: #20262c; border-radius: 20px; }
+    .app-layout .monitoring-stats dt { font-size: 10px; }
+    .app-layout .monitoring-stats dd { font: 29px Georgia, serif; }
+    .app-layout .monitoring-section-heading > h2 { font-size: 18px; font-weight: 400; }
+    .app-layout .monitoring-legend { font-size: 10px; gap: 9px; margin-top: 12px; }
+
+    /* Overview: one capacity panel and three compact key-zone cards. */
+    .app-layout .dashboard-header { display: none; }
+    .app-layout .dashboard-header > a { padding: 8px 12px; border-radius: 12px; font-size: 11px; }
+    .app-layout .dashboard-stats { grid-template-columns: minmax(0, 1fr) auto auto; gap: 0; border-radius: 22px; background: #20262c; padding: 20px 16px; margin-bottom: 24px; align-items: start; }
+    .app-layout .dashboard-stats > div { border: 0; border-radius: 0; background: none; padding: 0 10px; }
+    .app-layout .dashboard-stats > div:nth-child(3) { grid-column: 1; grid-row: 1; display: flex; flex-direction: column-reverse; padding-left: 0; }
+    .app-layout .dashboard-stats > div:nth-child(1) { grid-column: 2; grid-row: 1; border-right: 1px solid #39434a; }
+    .app-layout .dashboard-stats > div:nth-child(2) { grid-column: 3; grid-row: 1; padding-right: 0; }
+    .app-layout .dashboard-stats > div:nth-child(4) { grid-column: 1 / -1; padding: 8px 0 0; display: flex; align-items: baseline; gap: 8px; }
+    .app-layout .dashboard-stats > div > .text-4xl { font: 32px Georgia, serif; margin-bottom: 4px; }
+    .app-layout .dashboard-stats > div:nth-child(3) > .text-4xl { font-size: 44px; color: #f4f2eb; }
+    .app-layout .dashboard-stats > div > .text-sm { font-size: 10px; }
+    .app-layout .dashboard-stats > div:nth-child(3) > .text-sm { color: #f6bc48; text-transform: uppercase; font-weight: 700; }
+    .app-layout .dashboard-stats > div:nth-child(4) > .text-4xl { font-family: inherit; font-size: 11px; }
+    .app-layout .dashboard-key-zones { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+    .app-layout .dashboard-key-zones > div { padding: 13px 10px; border-radius: 20px; background: #171d21; justify-content: flex-start; }
+    .app-layout .dashboard-key-zones > div > .flex { display: block; margin-bottom: 12px; }
+    .app-layout .dashboard-key-zones > div > .flex > span { display: block; }
+    .app-layout .dashboard-key-zones .font-semibold { font-size: 11px; margin-bottom: 8px; min-height: 28px; }
+    .app-layout .dashboard-key-zones .text-4xl { font: 32px Georgia, serif; }
+    .app-layout .dashboard-key-zones .text-sm { font-size: 10px; }
+    .app-layout .dashboard-key-zones .h-2 { display: none; }
+    .app-layout .dashboard-key-zones .text-\[10px\] { font-size: 8px; }
+    .app-layout .dashboard-page section { margin-bottom: 24px; }
+    .app-layout .dashboard-page h2 { font-size: 18px; font-weight: 400; }
+    .app-layout .dashboard-link { font-size: 11px; }
+    .app-layout .dashboard-page .rounded-xl { border-radius: 20px; }
+    .app-layout .dashboard-page .border-l-danger { background: #412326; }
+    .app-layout .dashboard-page .border-l-warning { background: #3c311e; }
+    .app-layout .dashboard-page h3 { font: 21px/1.3 Georgia, serif; }
+    .app-layout .dashboard-page section:last-child > div { background: #173743; border: 0; }
+}
+
+@media (max-width: 350px) {
+    .app-layout .app-main { padding-inline: 12px; }
+    .app-layout .mobile-masthead { padding-inline: 12px; }
+    .mobile-brand { font-size: 13px; gap: 6px; }
+    .mobile-brand > svg { width: 18px; height: 18px; padding: 6px; }
+    .mobile-title-row h1 { font-size: 20px; }
+    .app-layout .simulation-flow-steps { gap: 16px; }
+    .app-layout .simulation-flow-card { padding: 11px 8px; }
+    .app-layout .simulation-flow-arrow { right: -15px; width: 13px; }
+    .app-layout .simulation-metrics dd { font-size: 29px; }
+    .app-layout .simulation-metrics small { font-size: 16px; }
+}
